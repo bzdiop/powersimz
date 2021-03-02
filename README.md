@@ -56,26 +56,26 @@ help powersimz  </code>
 <code> /* 4 */ powersimz y, cov(x2 x1 schools) level(schools) iter(1000)  </code> 
 <code> return list </code>   
 	
-Note that the more iterations you set as an option, the more reliable the MDEs, especially for the permutation-based ones. Whether you choose the permutation based (empirical) MDE or the one that assumes normality of the error term (theoretical) depends on what you believe your σ(β ̂) is. Note that for the theoretical MDE (asymptotic assumptions), the variation in the MDEs across the different outputs of the command should be small and due to: a) variation in σ ̂, which is expected to be small; that is because the only difference across the simulations is the treatment vector which is by design independent from the outcome y, and b) the fact that the correlation between the treatment vector and the other predictors isn't exactly zero.  
+Note that the more iterations you set as an option, the more reliable the MDEs, especially for the permutation-based ones. Whether you choose the permutation based (empirical) MDE or the one that assumes normality of the error term (theoretical) depends on what you believe your σ(β ̂) is. Note that for the theoretical MDE (asymptotic assumptions), the variation in the MDEs across the different outputs of the command should be small and due to: a) variation in σ ̂, which is expected to be small; that is because the only difference across the simulations is the treatment vector which is by design independent from the outcome y, and b) the fact that the correlation between the treatment vector and the other predictors isn't exactly zero.   
 
 ************************** Take-up  
-<code> 
-/* 5 */ powersimz y, cov(x2 x1) level(schools) iter(100) seed(20190630)
-return list  
 
-/* 6 */ powersimz y, cov(x2 x1) level(schools) iter(100) takeup(.60) seed(20190630)
-return list  
+<code>  /* 5 */ powersimz y, cov(x2 x1) level(schools) iter(100) seed(20190630) </code>  
+<code> return list  
+
+<code> /* 6 */ powersimz y, cov(x2 x1) level(schools) iter(100) takeup(.60) seed(20190630) </code>
+<code> return list </code>  
 
 Note that the MDE decreases with the take up rate. In /* 6 */ I assume that 60 % of the individuals who are offered the treatment actually take it up. Compared with /* 5 */, where there is a 100% take-up, you can see the change in MDE resulting from that drop in hypothetical treatment take-up.  
-</code> 
+ 
 ************************** Treatment share  
-<code> 
-/* 7 */ powersimz y, cov(x2 x1) level(schools) iter(100)  seed(20190630)  
+
+<code> /* 7 */ powersimz y, cov(x2 x1) level(schools) iter(100)  seed(20190630) </code>  
 return list  
 
-/* 8 */ powersimz y, cov(x2 x1) level(schools) iter(100) treatmentshare(.2) seed(20190630)  
-return list  
-</code> 
+<code> /* 8 */ powersimz y, cov(x2 x1) level(schools) iter(100) treatmentshare(.2) seed(20190630) </code>  
+return list </code>  
+
 
 Here we play with the share of individuals in the sample who are treated. Say that you have a base-line survey or an administrative dataset on a large population but you can only afford to treat 20% of them (as opposed to the typical 50%). You can see the difference by comparing the output of /* 7 */ and /* 8 */.  
 
