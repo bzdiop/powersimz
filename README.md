@@ -6,11 +6,10 @@ If you want to run power calculations using your baseline data, you can (typical
 In this post, I will walk you through how to run these simulations, using a command attached to this post.  
 
 ## Syntax:  
-    <html>
+  
       <head>
         powersimz outcome_var, covariates() [iterations() seed() level() treatmentshare() takeup() alpha() power() ]
       </head>
-    </html>
     
  ## Description
  _powersimz_ calculates and stores what I call theoretical and empirical simulation-based minimum detectable effects (MDEs).
