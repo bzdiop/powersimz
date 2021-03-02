@@ -23,7 +23,7 @@ The main difference between the two is how we define σ(β ̂): in the “theore
 ** Step 1 ** : Download the .zip file attached here [embed link], extract the contents in your local 	computer  
 ** Step 2 ** :  Open Stata, and type the following:  
 	<code> adopath + "~/Downloads/powersimz"  
-help powersimz  </code> 
+help powersimz  </code>  
 ** Step 3 ** : Create a temp global  
 	<code> global temp “[path]”</code>  
   
@@ -42,10 +42,10 @@ sort schools
 gen x1 = rnormal(0 , 1)  
 gen x2 = rbinomial(1200 ,  .5)  
 gen y   = rnormal(4 , 10)  
-
+</code> 
 
 ************************** Iterations  
-
+<code> 
 /* 1 */ powersimz y, cov(x2 x1 schools) level(schools) iter(100)  
 return list  
 
@@ -57,11 +57,11 @@ return list
 
 /* 4 */ powersimz y, cov(x2 x1 schools) level(schools) iter(1000)  
 return list  
-
+</code> 
 Note that the more iterations you set as an option, the more reliable the MDEs, especially for the permutation-based ones. Whether you choose the permutation based (empirical) MDE or the one that assumes normality of the error term (theoretical) depends on what you believe your σ(β ̂) is. Note that for the theoretical MDE (asymptotic assumptions), the variation in the MDEs across the different outputs of the command should be small and due to: a) variation in σ ̂, which is expected to be small; that is because the only difference across the simulations is the treatment vector which is by design independent from the outcome y, and b) the fact that the correlation between the treatment vector and the other predictors isn't exactly zero.  
 
 ************************** Take-up  
-
+<code> 
 /* 5 */ powersimz y, cov(x2 x1) level(schools) iter(100) seed(20190630)
 return list  
 
@@ -69,9 +69,9 @@ return list
 return list  
 
 Note that the MDE decreases with the take up rate. In /* 6 */ I assume that 60 % of the individuals who are offered the treatment actually take it up. Compared with /* 5 */, where there is a 100% take-up, you can see the change in MDE resulting from that drop in hypothetical treatment take-up.  
-
+</code> 
 ************************** Treatment share  
-
+<code> 
 /* 7 */ powersimz y, cov(x2 x1) level(schools) iter(100)  seed(20190630)  
 return list  
 
