@@ -22,42 +22,40 @@ The main difference between the two is how we define σ(β ̂): in the “theore
 ## Downloading powersimz
 ** Step 1 ** : Download the .zip file attached here [embed link], extract the contents in your local 	computer  
 ** Step 2 ** :  Open Stata, and type the following:  
-	<code> adopath + "~/Downloads/powersimz"  
+	<code> adopath + "~/Downloads/powersimz"  </code> 
 help powersimz  </code>  
 ** Step 3 ** : Create a temp global  
 	<code> global temp “[path]”</code>  
   
   
 ## Example:
-<code> 
-global temp “~/Documents/temporary” // replace this with the path to whatever folder you want to make your temporary folder  
+<code> global temp “~/Documents/temporary” // replace this with the path to whatever folder you want to make your temporary folder  </code> 
 
-clear  
-set obs  1200  
+<code> clear  </code> 
+<code> set obs  1200  </code> 
 
-egen schools = fill(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21)  
+<code> egen schools = fill(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21)  </code> 
 
-sort schools  
+<code> sort schools  </code> 
 
-gen x1 = rnormal(0 , 1)  
-gen x2 = rbinomial(1200 ,  .5)  
-gen y   = rnormal(4 , 10)  
-</code> 
+<code> gen x1 = rnormal(0 , 1)  </code> 
+<code> gen x2 = rbinomial(1200 ,  .5)  </code> 
+<code> gen y   = rnormal(4 , 10) </code>   
 
 ************************** Iterations  
-<code> 
-/* 1 */ powersimz y, cov(x2 x1 schools) level(schools) iter(100)  
-return list  
 
-/* 2 */ powersimz y, cov(x2 x1 schools) level(schools) iter(200)  
-return list  
+<code> /* 1 */ powersimz y, cov(x2 x1 schools) level(schools) iter(100)  </code> 
+<code> return list  </code> 
 
-/* 3 */ powersimz y, cov(x2 x1 schools) level(schools) iter(500)  
-return list  
+<code> /* 2 */ powersimz y, cov(x2 x1 schools) level(schools) iter(200)  </code> 
+<code> return list  </code> 
 
-/* 4 */ powersimz y, cov(x2 x1 schools) level(schools) iter(1000)  
-return list  
-</code> 
+<code> /* 3 */ powersimz y, cov(x2 x1 schools) level(schools) iter(500)  </code> 
+<code> return list  </code> 
+
+<code> /* 4 */ powersimz y, cov(x2 x1 schools) level(schools) iter(1000)  </code> 
+<code> return list </code>   
+	
 Note that the more iterations you set as an option, the more reliable the MDEs, especially for the permutation-based ones. Whether you choose the permutation based (empirical) MDE or the one that assumes normality of the error term (theoretical) depends on what you believe your σ(β ̂) is. Note that for the theoretical MDE (asymptotic assumptions), the variation in the MDEs across the different outputs of the command should be small and due to: a) variation in σ ̂, which is expected to be small; that is because the only difference across the simulations is the treatment vector which is by design independent from the outcome y, and b) the fact that the correlation between the treatment vector and the other predictors isn't exactly zero.  
 
 ************************** Take-up  
