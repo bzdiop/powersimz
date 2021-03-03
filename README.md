@@ -1,5 +1,6 @@
-# powersimz
-Simulations-based power calculations
+# Simulations-based power calculations
+<code> powersimz </code>   
+---
 
 If you want to run power calculations using your baseline data, you can (typically) either use the asymptotic properties of your sample or bootstrap your βi using simulations on your baseline data. One advantage of using simulations is that you can add controls to your power analysis. Typically, policies/interventions only mildly affect the variance of the outcome of interest. So even if your policy has a (relatively) large impact, the  standard errors (SEs) under the null hypothesis can be similar to the SE under the alternative. Adding controls can help get more precisely measures of the impact of interest.  
 
