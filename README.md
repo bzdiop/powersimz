@@ -12,8 +12,8 @@ In this post, I will walk you through how to run these simulations, using a comm
  ## Description
  <code> powersimz </code>  calculates and stores what I call theoretical and empirical simulation-based minimum detectable effects (MDEs).
  
-1. 	Theoretical MDEs: these MDEs are based on the SEs returned by the regress command, which rely on modeling assumptions (e.g. normally distributed errors in the case of OLS, where the SE is just √(σ〖(X^' X)〗^(-1) ). ) In this case the MDE is essentially: 〖(t〗_(α/2)+ t_(1-k))*Mean(SEs) of all the SEs from the β on each of the simulated treatment.
-2. 	Empirical MDEs: these MDEs are permutation-based, so there are no modeling assumptions. To generate the MDEs we take SD of the permutation sample of β (i.e. the sample of beta-hats from the simulations). The empirical version is based on the logic of permutation tests, which shuffle the treatment vector in order to simulate the null distribution. In this case the MDE is essentially: (t(α/2) + t(1−κ)) x SD(β-hat) 〖(t〗_(α/2)+ t_(1-k))*SD(β ̂)  
+1. 	**Theoretical MDEs** : these MDEs are based on the SEs returned by the regress command, which rely on modeling assumptions (e.g. normally distributed errors in the case of OLS, where the SE is just √(σ〖(X^' X)〗^(-1) ). ) In this case the MDE is essentially: 〖(t〗_(α/2)+ t_(1-k))*Mean(SEs) of all the SEs from the β on each of the simulated treatment.
+2. 	**Empirical MDEs: these MDEs are permutation-based** , so there are no modeling assumptions. To generate the MDEs we take SD of the permutation sample of β (i.e. the sample of beta-hats from the simulations). The empirical version is based on the logic of permutation tests, which shuffle the treatment vector in order to simulate the null distribution. In this case the MDE is essentially: (t(α/2) + t(1−κ)) x SD(β-hat) 〖(t〗_(α/2)+ t_(1-k))*SD(β ̂)  
 
 Note that MDEs are defined by the following: 〖(t〗_(α/2)+ t_(1-k))*σ(β ̂)  
 
