@@ -21,12 +21,15 @@ The main difference between the two is how we define σ(β ̂): in the “theore
 
 
 ## Downloading powersimz
-** Step 1 ** : Download the .zip file attached here [embed link], extract the contents in your local 	computer  
-** Step 2 ** :  Open Stata, and type the following:  
-	<code> adopath + "~/Downloads/powersimz"  </code>  
+#### Step 1: 
+Download the .zip file attached here [embed link], extract the contents in your local 	computer  
+#### Step 2:  
+Open Stata, and type the following:  
+<code> adopath + "~/Downloads/powersimz"  </code>  
 help powersimz  </code>  
-** Step 3 ** : Create a temp global  
-	<code> global temp “[path]”</code>  
+#### Step 3: 
+Create a temp global  
+<code> global temp “[path]”</code>  
   
   
 ## Example:
