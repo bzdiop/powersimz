@@ -78,7 +78,7 @@ return list
 return list </code>  
 
 
-Here we play with the share of individuals in the sample who are treated. Say that you have a base-line survey or an administrative dataset on a large population but you can only afford to treat 20% of them (as opposed to the typical 50%). You can see the difference by comparing the output of /* 7 */ and /* 8 */.  
+Here we play with the share of individuals in the sample who are treated. Say that you have a base-line survey or an administrative dataset on a large population but you can only afford to treat 20% of them (as opposed to the typical 50%). You can see the difference by comparing the output of /* 7 * / and /* 8 * /.  
 
 
 
