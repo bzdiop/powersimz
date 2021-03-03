@@ -67,7 +67,7 @@ Note that the more iterations you set as an option, the more reliable the MDEs, 
 <code> /* 6 */ powersimz y, cov(x2 x1) level(schools) iter(100) takeup(.60) seed(20190630) </code>
 <code> return list </code>  
 
-Note that the MDE decreases with the take up rate. In /* 6 */ I assume that 60 % of the individuals who are offered the treatment actually take it up. Compared with /* 5 */, where there is a 100% take-up, you can see the change in MDE resulting from that drop in hypothetical treatment take-up.  
+Note that the MDE decreases with the take up rate. In / * 6 * / I assume that 60 % of the individuals who are offered the treatment actually take it up. Compared with / * 5 * /, where there is a 100% take-up, you can see the change in MDE resulting from that drop in hypothetical treatment take-up.  
  
 <code> ************************** Treatment share  </code>   
 
